@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include "win.h"
 
+// J'initialise les combinaisons gagnantes (horizontal, vertical, diagonal)
 void init_win_conditions(int ***win_horizontal, int ***win_vertical, int ***win_diagonal) {
     *win_horizontal = malloc(3 * sizeof(int *));
     *win_vertical = malloc(3 * sizeof(int *));
@@ -23,12 +24,12 @@ void init_win_conditions(int ***win_horizontal, int ***win_vertical, int ***win_
             (*win_horizontal)[i][j] = tmp_horizontal[i][j];
             (*win_vertical)[i][j] = tmp_vertical[i][j];
         }
-
     for (int i = 0; i < 2; i++)
         for (int j = 0; j < 3; j++)
             (*win_diagonal)[i][j] = tmp_diagonal[i][j];
 }
 
+// Je vérifie si un joueur a gagné
 bool check_win(char *tab_values, int **h, int **v, int **d, char symbole) {
     for (int i = 0; i < 3; i++) {
         if ((tab_values[h[i][0]] == symbole && tab_values[h[i][1]] == symbole && tab_values[h[i][2]] == symbole) ||
@@ -42,6 +43,7 @@ bool check_win(char *tab_values, int **h, int **v, int **d, char symbole) {
     return false;
 }
 
+// Je libère la mémoire allouée pour les conditions de victoire
 void free_win_conditions(int **h, int **v, int **d) {
     for (int i = 0; i < 3; i++) {
         free(h[i]);

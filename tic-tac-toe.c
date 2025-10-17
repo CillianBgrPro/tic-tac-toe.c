@@ -31,7 +31,17 @@ int main(void) {
 
         if (check_win(tab_values, win_horizontal, win_vertical, win_diagonal, 'X')) {
             display_board(tab_values);
-            printf("\nVous avez gagné !\n");
+            printf("\nVous avez GAGNÉ !");
+            break;
+        }
+
+        bool plein = true;
+        for (int i = 0; i < 9; i++) {
+            if (tab_values[i] == ' ') plein = false;
+        }
+        if (plein) {
+            display_board(tab_values);
+            printf("\nMatch nul !\n");
             break;
         }
 
@@ -43,7 +53,7 @@ int main(void) {
 
         if (check_win(tab_values, win_horizontal, win_vertical, win_diagonal, 'O')) {
             display_board(tab_values);
-            printf("\nL'adversaire a gagné !\n");
+            printf("\nVous avez PERDU...\n");
             break;
         }
 
@@ -53,5 +63,6 @@ int main(void) {
     free_board(tab_values);
     free_win_conditions(win_horizontal, win_vertical, win_diagonal);
 
+    printf("\nFin de la partie.\n\n");
     return 0;
 }

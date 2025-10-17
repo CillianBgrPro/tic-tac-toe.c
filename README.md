@@ -1,1 +1,1 @@
-Tic Tac Toe Game in C language <img width="348" height="348" alt="png-clipart-c-logo-c-programming-language-icon-letter-c-blue-logo-thumbnail" src="https://github.com/user-attachments/assets/efd2b5ba-4721-4beb-94bf-da37dd438303" />
+![tic-tac-toe-couv png](https://github.com/user-attachments/assets/22fbe0ba-b56f-46a8-8334-c2b563c79828)
